@@ -1,0 +1,615 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Input
+{% endblock %}
+
+{% block main %}
+    <form action="/input" method="post">
+        <div class="mb-3">
+            <label for="yearinput" class="form-label">西暦</label>
+            <select class="form-control mx-auto w-auto" name="year">
+                <option disabled selected>選択してください</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="placeinput" class="form-label">競馬場</label>
+            <select class="form-control mx-auto w-auto" name="place">
+                <option disabled selected>選択してください</option>
+                <option value="01">札幌</option>
+                <option value="02">函館</option>
+                <option value="03">福島</option>
+                <option value="04">新潟</option>
+                <option value="05">東京</option>
+                <option value="06">中山</option>
+                <option value="07">中京</option>
+                <option value="08">京都</option>
+                <option value="09">阪神</option>
+                <option value="10">小倉</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="dateinput" class="form-label">第何回開催</label>
+            <select class="form-control mx-auto w-auto" name="date">
+                <option disabled selected>選択してください</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="dayinput" class="form-label">開催何日目</label>
+            <select class="form-control mx-auto w-auto" name="day">
+                <option disabled selected>選択してください</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="raceinput" class="form-label">何レース目</label>
+            <select class="form-control mx-auto w-auto" name="race">
+                <option disabled selected>選択してください</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="buyinput" class="form-label">券種</label>
+            <select class="form-control mx-auto w-auto" name="buy" id="buy">
+                <option disabled selected>選択してください</option>
+                <option value="単勝">単勝</option>
+                <option value="複勝">複勝</option>
+                <option value="枠連">枠連</option>
+                <option value="馬連">馬連</option>
+                <option value="ワイド">ワイド</option>
+                <option value="馬単">馬単</option>
+                <option value="3連複">3連複</option>
+                <option value="3連単">3連単</option>
+            </select>
+        </div>
+
+        <p></p>
+        <label for="umabaninput" class="form-label">馬番を入力してください</label>
+
+        <div class="tankei">
+            <select class="form-control mx-auto w-auto" name="tankeinumber1">
+                <option disabled selected>1頭目</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+            </select>
+        </div>
+
+        <div class="renkei">
+            <label for="renkeinumber1" class="form-label">1頭目&nbsp;</label>
+            <input class="checklist" type="checkbox" id="Check_all">
+            <label class="checklist" for="Check_all">全て選択 / 解除</label>
+
+            <p>
+                <input class="checklist" type="checkbox" value="1" id="Check1" name="renkeinumber1">
+                <label class="checklist" for="Check1">1&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="2" id="Check2" name="renkeinumber1">
+                <label class="checklist" for="Check2">2&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="3" id="Check3" name="renkeinumber1">
+                <label class="checklist" for="Check3">3&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="4" id="Check4" name="renkeinumber1">
+                <label class="checklist" for="Check4">4&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="5" id="Check5" name="renkeinumber1">
+                <label class="checklist" for="Check5">5&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="6" id="Check6" name="renkeinumber1">
+                <label class="checklist" for="Check6">6&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="7" id="Check7" name="renkeinumber1">
+                <label class="checklist" for="Check7">7&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="8" id="Check8" name="renkeinumber1">
+                <label class="checklist" for="Check8">8&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="9" id="Check9" name="renkeinumber1">
+                <label class="checklist" for="Check9">9&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="10" id="Check10" name="renkeinumber1">
+                <label class="checklist" for="Check10">10&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="11" id="Check11" name="renkeinumber1">
+                <label class="checklist" for="Check11">11&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="12" id="Check12" name="renkeinumber1">
+                <label class="checklist" for="Check12">12&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="13" id="Check13" name="renkeinumber1">
+                <label class="checklist" for="Check13">13&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="14" id="Check14" name="renkeinumber1">
+                <label class="checklist" for="Check14">14&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="15" id="Check15" name="renkeinumber1">
+                <label class="checklist" for="Check15">15&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="16" id="Check16" name="renkeinumber1">
+                <label class="checklist" for="Check16">16&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="17" id="Check17" name="renkeinumber1">
+                <label class="checklist" for="Check17">17&nbsp;</label>
+
+                <input class="checklist" type="checkbox" value="18" id="Check18" name="renkeinumber1">
+                <label class="checklist" for="Check18">18&nbsp;</label>
+            </p>
+
+            <p></p>
+
+            <label for="renkeinumber1" class="form-label">2頭目&nbsp;</label>
+            <input class="checklist2" type="checkbox" id="Check_all2">
+            <label class="checklist2" for="Check_all2">全て選択 / 解除</label>
+
+            <p>
+                <input class="checklist2" type="checkbox" value="1" id="Check1_2" name="renkeinumber2">
+                <label class="checklist2" for="Check1_2">1&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="2" id="Check2_2" name="renkeinumber2">
+                <label class="checklist2" for="Check2_2">2&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="3" id="Check3_2" name="renkeinumber2">
+                <label class="checklist2" for="Check3_2">3&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="4" id="Check4_2" name="renkeinumber2">
+                <label class="checklist2" for="Check4_2">4&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="5" id="Check5_2" name="renkeinumber2">
+                <label class="checklist2" for="Check5_2">5&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="6" id="Check6_2" name="renkeinumber2">
+                <label class="checklist2" for="Check6_2">6&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="7" id="Check7_2" name="renkeinumber2">
+                <label class="checklist2" for="Check7_2">7&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="8" id="Check8_2" name="renkeinumber2">
+                <label class="checklist2" for="Check8_2">8&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="9" id="Check9_2" name="renkeinumber2">
+                <label class="checklist2" for="Check9_2">9&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="10" id="Check10_2" name="renkeinumber2">
+                <label class="checklist2" for="Check10_2">10&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="11" id="Check11_2" name="renkeinumber2">
+                <label class="checklist2" for="Check11_2">11&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="12" id="Check12_2" name="renkeinumber2">
+                <label class="checklist2" for="Check12_2">12&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="13" id="Check13_2" name="renkeinumber2">
+                <label class="checklist2" for="Check13_2">13&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="14" id="Check14_2" name="renkeinumber2">
+                <label class="checklist2" for="Check14_2">14&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="15" id="Check15_2" name="renkeinumber2">
+                <label class="checklist2" for="Check15_2">15&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="16" id="Check16_2" name="renkeinumber2">
+                <label class="checklist2" for="Check16_2">16&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="17" id="Check17_2" name="renkeinumber2">
+                <label class="checklist2" for="Check17_2">17&nbsp;</label>
+
+                <input class="checklist2" type="checkbox" value="18" id="Check18_2" name="renkeinumber2">
+                <label class="checklist2" for="Check18_2">18&nbsp;</label>
+            </p>
+        </div>
+
+        <div class="sanrenkei">
+            <label for="sanrenkeinumber1" class="form-label">1頭目&nbsp;</label>
+            <input class="checklist4" type="checkbox" id="Check_all4">
+            <label class="checklist4" for="Check_all4">全て選択 / 解除</label>
+
+            <p>
+                <input class="checklist4" type="checkbox" value="1" id="Check1_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check1_4">1&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="2" id="Check2_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check2_4">2&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="3" id="Check3_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check3_4">3&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="4" id="Check4_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check4_4">4&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="5" id="Check5_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check5_4">5&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="6" id="Check6_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check6_4">6&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="7" id="Check7_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check7_4">7&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="8" id="Check8_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check8_4">8&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="9" id="Check9_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check9_4">9&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="10" id="Check10_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check10_4">10&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="11" id="Check11_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check11_4">11&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="12" id="Check12_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check12_4">12&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="13" id="Check13_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check13_4">13&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="14" id="Check14_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check14_4">14&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="15" id="Check15_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check15_4">15&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="16" id="Check16_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check16_4">16&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="17" id="Check17_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check17_4">17&nbsp;</label>
+
+                <input class="checklist4" type="checkbox" value="18" id="Check18_4" name="sanrenkeinumber1">
+                <label class="checklist4" for="Check18_4">18&nbsp;</label>
+            </p>
+
+            <p></p>
+
+            <label for="sanrenkeinumber2" class="form-label">2頭目&nbsp;</label>
+            <input class="checklist5" type="checkbox" id="Check_all5">
+            <label class="checklist5" for="Check_all5">全て選択 / 解除</label>
+
+            <p>
+                <input class="checklist5" type="checkbox" value="1" id="Check1_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check1_5">1&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="2" id="Check2_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check2_5">2&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="3" id="Check3_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check3_5">3&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="4" id="Check4_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check4_5">4&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="5" id="Check5_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check5_5">5&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="6" id="Check6_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check6_5">6&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="7" id="Check7_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check7_5">7&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="8" id="Check8_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check8_5">8&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="9" id="Check9_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check9_5">9&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="10" id="Check10_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check10_5">10&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="11" id="Check11_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check11_5">11&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="12" id="Check12_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check12_5">12&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="13" id="Check13_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check13_5">13&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="14" id="Check14_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check14_5">14&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="15" id="Check15_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check15_5">15&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="16" id="Check16_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check16_5">16&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="17" id="Check17_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check17_5">17&nbsp;</label>
+
+                <input class="checklist5" type="checkbox" value="18" id="Check18_5" name="sanrenkeinumber2">
+                <label class="checklist5" for="Check18_5">18&nbsp;</label>
+            </p>
+
+            <p></p>
+
+            <label for="sanrenkeinumber3" class="form-label">3頭目&nbsp;</label>
+            <input class="checklist3" type="checkbox" id="Check_all3">
+            <label class="checklist3" for="Check_all3">全て選択 / 解除</label>
+
+            <p>
+                <input class="checklist3" type="checkbox" value="1" id="Check1_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check1_3">1&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="2" id="Check2_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check2_3">2&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="3" id="Check3_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check3_3">3&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="4" id="Check4_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check4_3">4&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="5" id="Check5_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check5_3">5&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="6" id="Check6_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check6_3">6&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="7" id="Check7_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check7_3">7&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="8" id="Check8_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check8_3">8&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="9" id="Check9_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check9_3">9&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="10" id="Check10_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check10_3">10&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="11" id="Check11_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check11_3">11&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="12" id="Check12_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check12_3">12&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="13" id="Check13_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check13_3">13&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="14" id="Check14_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check14_3">14&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="15" id="Check15_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check15_3">15&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="16" id="Check16_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check16_3">16&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="17" id="Check17_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check17_3">17&nbsp;</label>
+
+                <input class="checklist3" type="checkbox" value="18" id="Check18_3" name="sanrenkeinumber3">
+                <label class="checklist3" for="Check18_3">18&nbsp;</label>
+            </p>
+        </div>
+
+        <p></p>
+
+        <div class="mb-3">
+            <label for="oddsinput" class="form-label">オッズ</label>
+            <input class="form-control mx-auto w-auto" id="odds" name="odds" placeholder="入力してください" type="number" step="0.1">
+        </div>
+
+        <div class="mb-3">
+            <label for="moneyinput" class="form-label">購入金額(1点)</label>
+            <input class="form-control mx-auto w-auto" id="money" name="money" placeholder="入力してください" type="number">
+        </div>
+
+        <div class="mb-3">
+            <label for="gotinput" class="form-label">的中</label>
+            <select class="form-control mx-auto w-auto" name="got">
+                <option disabled selected>選択してください</option>
+                <option value="的中">的中</option>
+                <option value="不的中">不的中</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Input</button>
+
+        <script>
+            let buyselect = document.querySelector("#buy");
+
+            let tankei = document.querySelectorAll(".tankei");
+
+            let renkei = document.querySelectorAll(".renkei");
+
+            let sanrenkei = document.querySelectorAll(".sanrenkei");
+
+            buyselect.addEventListener('change', arrival);
+
+            function arrival() {
+                tankei.forEach(function(a){
+                    if(buyselect.value === "単勝" || buyselect.value === "複勝"){
+                        a.style.display = "block";
+                    }else{
+                        a.style.display = "none";
+                    }
+                });
+                renkei.forEach(function(a){
+                    if(buyselect.value === "枠連" || buyselect.value === "馬連" || buyselect.value === "ワイド" || buyselect.value === "馬単"){
+                        a.style.display = "block";
+                    }else{
+                        a.style.display = "none";
+                    }
+                });
+                sanrenkei.forEach(function(a){
+                    if(buyselect.value === "3連複" || buyselect.value === "3連単"){
+                        a.style.display = "block";
+                    }else{
+                        a.style.display = "none";
+                    }
+                });
+            }
+
+            let checkbox_all = document.querySelector("#Check_all");
+
+            let checkbox_list = document.querySelectorAll(".checklist");
+
+            checkbox_all.addEventListener('change', change_all);
+
+            function change_all() {
+                if (checkbox_all.checked) {
+                    for (let i in checkbox_list) {
+                        if (checkbox_list.hasOwnProperty(i)) {
+                            checkbox_list[i].checked = true;
+                        }
+                    }
+
+                } else {
+                    for (let i in checkbox_list) {
+                        if (checkbox_list.hasOwnProperty(i)) {
+                            checkbox_list[i].checked = false;
+                        }
+                    }
+                }
+            };
+
+            let checkbox_all2 = document.querySelector("#Check_all2");
+
+            let checkbox_list2 = document.querySelectorAll(".checklist2");
+
+            checkbox_all2.addEventListener('change', change_all2);
+
+            function change_all2() {
+                if (checkbox_all2.checked) {
+                    for (let i in checkbox_list2) {
+                        if (checkbox_list2.hasOwnProperty(i)) {
+                            checkbox_list2[i].checked = true;
+                        }
+                    }
+
+                } else {
+                    for (let i in checkbox_list2) {
+                        if (checkbox_list2.hasOwnProperty(i)) {
+                            checkbox_list2[i].checked = false;
+                        }
+                    }
+                }
+            };
+
+            let checkbox_all3 = document.querySelector("#Check_all3");
+
+            let checkbox_list3 = document.querySelectorAll(".checklist3");
+
+            checkbox_all3.addEventListener('change', change_all3);
+
+            function change_all3() {
+                if (checkbox_all3.checked) {
+                    for (let i in checkbox_list3) {
+                        if (checkbox_list3.hasOwnProperty(i)) {
+                            checkbox_list3[i].checked = true;
+                        }
+                    }
+
+                } else {
+                    for (let i in checkbox_list3) {
+                        if (checkbox_list3.hasOwnProperty(i)) {
+                            checkbox_list3[i].checked = false;
+                        }
+                    }
+                }
+            };
+
+            let checkbox_all4 = document.querySelector("#Check_all4");
+
+            let checkbox_list4 = document.querySelectorAll(".checklist4");
+
+            checkbox_all4.addEventListener('change', change_all4);
+
+            function change_all4() {
+                if (checkbox_all4.checked) {
+                    for (let i in checkbox_list4) {
+                        if (checkbox_list4.hasOwnProperty(i)) {
+                            checkbox_list4[i].checked = true;
+                        }
+                    }
+
+                } else {
+                    for (let i in checkbox_list4) {
+                        if (checkbox_list4.hasOwnProperty(i)) {
+                            checkbox_list4[i].checked = false;
+                        }
+                    }
+                }
+            };
+
+            let checkbox_all5 = document.querySelector("#Check_all5");
+
+            let checkbox_list5 = document.querySelectorAll(".checklist5");
+
+            checkbox_all5.addEventListener('change', change_all5);
+
+            function change_all5() {
+                if (checkbox_all5.checked) {
+                    for (let i in checkbox_list5) {
+                        if (checkbox_list5.hasOwnProperty(i)) {
+                            checkbox_list5[i].checked = true;
+                        }
+                    }
+
+                } else {
+                    for (let i in checkbox_list5) {
+                        if (checkbox_list5.hasOwnProperty(i)) {
+                            checkbox_list5[i].checked = false;
+                        }
+                    }
+                }
+            };
+        </script>
+    </form>
+{% endblock %}

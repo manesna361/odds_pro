@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    analyze
+{% endblock %}
+
+{% block main %}
+    <main class="container py-5 text-center">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-start">raceid</th>
+                    <th class="text-start">buy</th>
+                    <th class="text-start">odds</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td class="text-start">{{ raceid }}&nbsp;<button class="btn btn-primary" type="submit"  onclick="location.href='https://race.netkeiba.com/race/shutuba.html?race_id={{ raceid }}'">成績</button></td>
+                        <td class="text-start">{{ item.buy }}</td>
+                        <td class="text-start">{{ item.odds }}</td>
+                    </tr>
+                {% endfor %}
+                {% for lists in lists %}
+                <tr>
+                    <td class="text-start">期待値オッズ</td>
+                    <td class="text-start">{{ lists.buy }}</td>
+                    <td class="text-start">{{ lists.odds }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        </main>
+{% endblock %}

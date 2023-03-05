@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <main class="container py-5 text-center">
+        <!-- <div class="d-grid gap-2 col-6 mx-auto">
+            <h1><label for="placeinput" class="form-label">競馬場</label></h1>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">札幌競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">函館競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">福島競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">新潟競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">東京競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">中山競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">中京競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">京都競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">阪神競馬場</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/input'">小倉競馬場</button>
+        </div>
+
+        <p></p> -->
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <h1><label for="placeinput" class="form-label">券種</label></h1>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='tansho') }}'">単勝</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='fukusho') }}'">複勝</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='wakuren') }}'">枠連</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='umaren') }}'">馬連</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='waido') }}'">ワイド</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='umatan') }}'">馬単</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='sanrenpuku') }}'">3連複</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="location.href='{{ url_for('expect', build='sanrentan') }}'">3連単</button>
+        </div>
+    </main>
+{% endblock %}
